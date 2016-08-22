@@ -54,7 +54,7 @@ namespace XFGloss
 				renderer._cell = new WeakReference<Cell>(cell);
 
 				// cell.PropertyChanging += cellTracker.CellPropertyChanging;
-				WeakEvent.RegisterEvent<Cell, PropertyChangingEventArgs>(cell,
+				WeakEvent.RegisterEvent<Cell, Xamarin.Forms.PropertyChangingEventArgs>(cell,
 																		 nameof(cell.PropertyChanging),
 																		 renderer.BindablePropertyChangingHandler);
 
@@ -212,7 +212,7 @@ namespace XFGloss
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="args">Arguments.</param>
-		void BindablePropertyChangingHandler(object sender, PropertyChangingEventArgs args)
+		void BindablePropertyChangingHandler(object sender, Xamarin.Forms.PropertyChangingEventArgs args)
 		{
 			ElementPropertyChanging(sender, args);
 		}
@@ -223,7 +223,7 @@ namespace XFGloss
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="args">Arguments.</param>
-		protected virtual void ElementPropertyChanging(object sender, PropertyChangingEventArgs args)
+		protected virtual void ElementPropertyChanging(object sender, Xamarin.Forms.PropertyChangingEventArgs args)
 		{
 			if (args.PropertyName == CellGloss.BackgroundGradientProperty.PropertyName)
 			{

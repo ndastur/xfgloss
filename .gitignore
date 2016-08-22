@@ -6,6 +6,9 @@
 [Bb]in/
 packages/
 TestResults/
+*.lock.json
+*.nuget.props
+*.nuget.targets
 
 # globs
 Makefile.in
